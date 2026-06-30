@@ -21,12 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("scroll", verificarScroll);
     verificarScroll();
 
-    // Flashcards
+       // Flashcards
     const flashcards = document.querySelectorAll('.flashcard');
     flashcards.forEach(card => {
         card.addEventListener('click', () => {
-            const flipped = card.getAttribute('data-flipped') === 'true';
-            card.setAttribute('data-flipped', !flipped);
+            card.classList.toggle('flipped');
         });
     });
 
