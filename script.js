@@ -22,12 +22,10 @@ document.addEventListener("DOMContentLoaded", function() {
     verificarScroll();
 
        // Flashcards
-    const flashcards = document.querySelectorAll('.flashcard');
-    flashcards.forEach(card => {
+    document.querySelectorAll('.flashcard').forEach(card => {
         card.addEventListener('click', () => {
             card.classList.toggle('flipped');
         });
     });
-
     console.log("✅ Site Agrinho 2026 carregado com sucesso!");
 });
