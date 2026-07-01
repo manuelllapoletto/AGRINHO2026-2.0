@@ -72,7 +72,7 @@ img {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* FLASHCARDS SIMPLES */
+/* FLASHCARDS */
 .flashcard-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -85,6 +85,7 @@ img {
     position: relative;
     cursor: pointer;
     perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
 .flashcard .front,
@@ -94,18 +95,22 @@ img {
     height: 100%;
     border-radius: 12px;
     padding: 20px;
+    
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: all 0.5s ease;
+
+    transition: transform 0.5s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    backface-visibility: hidden;
 }
 
 .flashcard .front {
     background: #2e7d32;
     color: white;
-    z-index: 2;
+    transform: rotateY(0deg);
 }
 
 .flashcard .back {
@@ -115,7 +120,7 @@ img {
 }
 
 .flashcard.flipped .front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
 }
 
 .flashcard.flipped .back {
